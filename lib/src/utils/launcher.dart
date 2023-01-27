@@ -13,13 +13,10 @@ Future launchExternalUrl(String url, BuildContext? context) async {
   if (!url.contains("http") && !url.contains("https")) {
     url = "https://$url";
   }
-  if (_isSocialLink(url)) {
-    await launchUrlString(
-      url,
-      mode: LaunchMode.externalApplication,
-    );
-    return;
-  }
+  await launchUrlString(
+    url,
+    mode: LaunchMode.externalApplication,
+  );
 }
 
 Future launchFacebookApp(String? pageId, String fallbackUrl) async {
