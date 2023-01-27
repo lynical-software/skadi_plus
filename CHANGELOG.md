@@ -1,3 +1,7 @@
+## [0.0.3] - 27 January 2023
+- Bump skadi version down
+- add `SkadiPaginatedListViewPlus`
+
 ## [0.0.2] - 27 January 2023
 - Update documentation
 - add `PaginationHandler`, `Pagination`, `PaginationResponse`
