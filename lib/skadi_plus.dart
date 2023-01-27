@@ -1,8 +1,5 @@
 library skadi_plus;
 
-//Firebase
-export 'src/firebase/collection_service.dart';
-
 ///Model
 export 'src/model/pagination_handler.dart';
 
