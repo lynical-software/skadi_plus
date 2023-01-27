@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:future_manager/future_manager.dart';
@@ -25,9 +24,9 @@ class SkadiError {
     }
 
     ///Firebase
-    else if (exception is FirebaseException) {
-      errorMessage = exception.message;
-    }
+    // else if (exception is FirebaseException) {
+    //   errorMessage = exception.message;
+    // }
 
     ////Dio Error
     else if (exception is DioError) {
