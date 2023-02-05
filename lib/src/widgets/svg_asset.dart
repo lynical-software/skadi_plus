@@ -63,7 +63,10 @@ class SkadiSvgAsset extends StatelessWidget {
       asset,
       width: size,
       height: size,
-      color: iconColor ?? Theme.of(context).primaryColor,
+      colorFilter: ColorFilter.mode(
+        iconColor ?? Theme.of(context).primaryColor,
+        BlendMode.srcIn,
+      ),
       placeholderBuilder: (context) {
         return errorPlaceholder ??
             SkadiPlusProvider.of(context)?.imageError ??

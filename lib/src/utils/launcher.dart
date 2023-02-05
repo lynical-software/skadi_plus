@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-bool _isSocialLink(String url) {
-  return url.contains("instagram") ||
-      url.contains("twitter") ||
-      url.contains("youtube");
-}
+// bool _isSocialLink(String url) {
+//   return url.contains("instagram") ||
+//       url.contains("twitter") ||
+//       url.contains("youtube");
+// }
 
 Future launchExternalUrl(String url, BuildContext? context) async {
   if (!url.contains("http") && !url.contains("https")) {

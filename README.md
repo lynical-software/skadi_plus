@@ -10,5 +10,5 @@ Add this to pubspec.yaml
 
 ```dart
 dependencies:
-  skadi_plus: ^0.1.0
+  skadi_plus: ^0.2.0
 ```
