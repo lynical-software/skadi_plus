@@ -1,3 +1,8 @@
+## [0.3.0] - 15 February 2023
+- fix `SkadiNetworkImage`
+- improve `PaginationHandler`
+- improve `SkadiError`
+
 ## [0.2.0] - 5 February 2023
 - Update dependencies
 

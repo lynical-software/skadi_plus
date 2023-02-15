@@ -4,18 +4,43 @@ import 'package:flutter_svg/svg.dart';
 import '../provider.dart';
 
 class SkadiSvgAsset extends StatelessWidget {
+  ///
   final String asset;
+
+  ///
   final double size;
-  final Color? bgColor;
+
+  ///
+  final Color? backgroundColor;
+
+  ///
   final EdgeInsets padding;
-  final Color? iconColor;
+
+  ///
+  final Color? color;
+
+  ///
   final EdgeInsets? margin;
+
+  ///
   final ShapeBorder? shape;
+
+  ///
   final BorderSide? side;
+
+  ///
   final VoidCallback? onTap;
+
+  ///
   final bool _iconOnly;
+
+  ///
   final double? width;
+
+  ///
   final double? height;
+
+  ///
   final Widget? errorPlaceholder;
 
   ///A Widget to handle a svg in our asset folder
@@ -23,8 +48,8 @@ class SkadiSvgAsset extends StatelessWidget {
     Key? key,
     required this.asset,
     this.size = 24,
-    this.iconColor,
-    this.bgColor = Colors.transparent,
+    this.color,
+    this.backgroundColor = Colors.transparent,
     this.padding = const EdgeInsets.all(16.0),
     this.shape,
     this.side,
@@ -40,8 +65,8 @@ class SkadiSvgAsset extends StatelessWidget {
     Key? key,
     required this.asset,
     this.size = 18,
-    this.iconColor,
-    this.bgColor = Colors.transparent,
+    this.color,
+    this.backgroundColor = Colors.transparent,
     this.padding = const EdgeInsets.all(0),
     this.shape,
     this.side,
@@ -64,12 +89,12 @@ class SkadiSvgAsset extends StatelessWidget {
       width: size,
       height: size,
       colorFilter: ColorFilter.mode(
-        iconColor ?? Theme.of(context).primaryColor,
+        color ?? Theme.of(context).primaryColor,
         BlendMode.srcIn,
       ),
       placeholderBuilder: (context) {
         return errorPlaceholder ??
-            SkadiPlusProvider.of(context)?.imageError ??
+            SkadiPlusProvider.of(context)?.imagePlaceholder ??
             const SizedBox.shrink();
       },
     );
@@ -82,7 +107,7 @@ class SkadiSvgAsset extends StatelessWidget {
     }
     final child = Card(
       shape: customShape,
-      color: bgColor,
+      color: backgroundColor,
       elevation: 0.0,
       margin: margin ?? EdgeInsets.zero,
       child: InkWell(

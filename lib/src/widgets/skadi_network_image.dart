@@ -44,8 +44,8 @@ class SkadiNetworkImage extends StatelessWidget {
           },
           placeholder: (context, data) {
             if (loading != null) return loading!;
-            return provider?.imageError ??
-                const Icon(Icons.image_rounded, size: 32);
+            return provider?.imagePlaceholder ??
+                const Icon(Icons.image_rounded);
           },
         ),
       ),

@@ -10,6 +10,7 @@ class SkadiError {
   ///Get readable error message from various type of exception to display to user
   static String getReadableErrorMessage(
     dynamic exception, {
+    ///Mapper for Dio error type of Response and Map
     ResponseMapper? mapResponseMapper,
   }) {
     String? errorMessage;
@@ -32,7 +33,8 @@ class SkadiError {
     else if (exception is DioError) {
       ///Socket exception, No internet
       if (exception.error is SocketException) {
-        errorMessage = "There is no internet connection!";
+        errorMessage =
+            "Unable to connect to server! Please check your internet connection or Request Url";
       }
 
       ///Connection timeout

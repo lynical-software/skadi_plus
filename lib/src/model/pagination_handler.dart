@@ -28,24 +28,33 @@ class PaginationResponse<T> {
 
 ///Use this class with FutureManager to handle pagination automatically
 class PaginationHandler<T extends PaginationResponse<M>, M extends Object> {
-  bool hasMoreData = true;
-  int page = 1;
+  //
+  bool _hasMoreData = true;
+  bool get hasMoreData => _hasMoreData;
+
+  //
+  int _page = 1;
+  int get page => _page;
 
   final FutureManager<T> manager;
   PaginationHandler(this.manager);
 
   void reset() {
-    hasMoreData = true;
-    page = 1;
+    _hasMoreData = true;
+    _page = 1;
+  }
+
+  bool hasMoreDataCondition(T response, int lastResponseCount) {
+    return response.data.length < response.totalRecord && lastResponseCount > 0;
   }
 
   T handle(T response) {
+    var count = response.data.length;
     if (manager.hasData && page > 1) {
       response.data = [...manager.data!.data, ...response.data];
     }
-    hasMoreData =
-        response.data.length < response.totalRecord && response.data.isNotEmpty;
-    page += 1;
+    _hasMoreData = hasMoreDataCondition(response, count);
+    _page += 1;
     debugPrint(
         "${manager.data.runtimeType} total length: ${response.data.length}");
     return response;
