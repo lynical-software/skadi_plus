@@ -1,3 +1,6 @@
+## [0.4.0] - 13 march 2023
+- update package to latest release
+
 ## [0.3.0] - 15 February 2023
 - fix `SkadiNetworkImage`
 - improve `PaginationHandler`
