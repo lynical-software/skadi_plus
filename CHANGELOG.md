@@ -1,3 +1,6 @@
+## [0.5.0] - 18 march 2023
+- update `Skadi` to latest release
+
 ## [0.4.0] - 13 march 2023
 - update package to latest release
 
