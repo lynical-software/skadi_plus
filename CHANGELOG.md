@@ -1,3 +1,5 @@
+## [0.6.0] - 11 May 2023
+- update dependencies
 ## [0.5.0] - 18 march 2023
 - update `Skadi` to latest release
 
