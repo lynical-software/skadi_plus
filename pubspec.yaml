@@ -1,6 +1,6 @@
 name: skadi_plus
 description: Utilities widgets and method on top of other Flutter's package.
-version: 0.7.0
+version: 1.0.0
 
 homepage: https://www.lynical.com
 repository: https://github.com/lynical-software/skadi_plus
@@ -20,7 +20,7 @@ dependencies:
   get_it: ^7.6.0
   flutter_svg: ^2.0.5
   cached_network_image: ^3.2.3
-  skadi: ^2.7.0
+  skadi: ^2.7.4
 
 dev_dependencies:
   flutter_test:

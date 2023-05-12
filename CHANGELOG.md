@@ -1,3 +1,6 @@
+## [1.0.0] - 12 May 2023
+- stable release
+
 ## [0.7.0] - 11 May 2023
 - update dependencies
 
