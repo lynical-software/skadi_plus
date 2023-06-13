@@ -30,21 +30,20 @@ class SkadiError {
     // }
 
     ////Dio Error
-    else if (exception is DioError) {
+    else if (exception is DioException) {
       ///Socket exception, No internet
-      if (exception.error is SocketException) {
-        errorMessage =
-            "Unable to connect to server! Please check your internet connection or Request Url";
+      if (exception.type == DioExceptionType.connectionError) {
+        errorMessage = "Unable to connect to server! Please check your internet connection or Request Url";
       }
 
       ///Connection timeout
-      else if (exception.type == DioErrorType.connectTimeout ||
-          exception.type == DioErrorType.receiveTimeout) {
+      else if (exception.type == DioExceptionType.connectionTimeout ||
+          exception.type == DioExceptionType.receiveTimeout) {
         errorMessage = "Error connecting to server! Connection timeout";
       }
 
       ///Error with response
-      else if (exception.type == DioErrorType.response) {
+      else if (exception.type == DioExceptionType.badResponse) {
         if (mapResponseMapper != null) {
           errorMessage = mapResponseMapper.call(exception.response?.data);
         } else {

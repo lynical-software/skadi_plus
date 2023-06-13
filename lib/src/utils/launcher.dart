@@ -52,12 +52,12 @@ Future launchFacebookApp(String? pageId, String fallbackUrl) async {
   }
 }
 
-void launchMap(double lat, double lng) async {
+void launchMap(double lat, double lng, {bool adaptive = true}) async {
   var url = '';
-  if (Platform.isAndroid) {
-    url = "https://www.google.com/maps/search/?api=1&query=$lat,$lng";
-  } else {
+  if (Platform.isIOS && adaptive) {
     url = 'https://maps.apple.com/?q=$lat,$lng';
+  } else {
+    url = "https://www.google.com/maps/search/?api=1&query=$lat,$lng";
   }
   await launchUrlString(
     url,

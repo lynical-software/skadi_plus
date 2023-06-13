@@ -1,3 +1,6 @@
+## [2.0.0] - 13 June 2023
+- Flutter 3.10 release
+
 ## [1.0.0] - 12 May 2023
 - stable release
 
