@@ -19,6 +19,8 @@ class SkadiPaginatedListViewPlus extends StatelessWidget {
   final ScrollController? controller;
   final Widget Function(FutureFunction, FutureManagerError)? errorWidget;
   final PaginationHandler paginationHandler;
+  final double refreshIndicatorEdgeOffset;
+  final SkadiListViewFetchOptions fetchOptions;
   //
   const SkadiPaginatedListViewPlus({
     required this.itemCount,
@@ -35,6 +37,8 @@ class SkadiPaginatedListViewPlus extends StatelessWidget {
     this.controller,
     this.hasRefreshButtonWhenEmpty = true,
     this.errorWidget,
+    this.fetchOptions = const SkadiListViewFetchOptions(),
+    this.refreshIndicatorEdgeOffset = 0,
   }) : super(key: key);
 
   @override
@@ -48,6 +52,7 @@ class SkadiPaginatedListViewPlus extends StatelessWidget {
     }
     return RefreshIndicator(
       onRefresh: onRefresh,
+      edgeOffset: refreshIndicatorEdgeOffset,
       child: SkadiPaginatedListView(
         padding: padding ?? EdgeInsets.zero,
         scrollController: controller,
@@ -57,6 +62,7 @@ class SkadiPaginatedListViewPlus extends StatelessWidget {
         shrinkWrap: shrinkWrap,
         scrollDirection: scrollDirection ?? Axis.vertical,
         itemCount: itemCount,
+        fetchOptions: fetchOptions,
         separatorBuilder: separatorBuilder,
         hasError: paginationHandler.manager.hasError,
         loadingWidget: provider?.loadingWidget,

@@ -1,3 +1,6 @@
+## [2.0.1] - 2 August 2023
+- Skadi 3.2.0 update
+
 ## [2.0.0] - 13 June 2023
 - Flutter 3.10 release
 

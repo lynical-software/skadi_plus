@@ -19,21 +19,17 @@ class SkadiError {
       exception = exception.exception;
     }
 
-    ///Other
-    if (exception is PlatformException) {
-      errorMessage = exception.message;
-    }
-
     ///Firebase
-    // else if (exception is FirebaseException) {
+    //if (exception is FirebaseException) {
     //   errorMessage = exception.message;
     // }
 
     ////Dio Error
-    else if (exception is DioException) {
+    if (exception is DioException) {
       ///Socket exception, No internet
       if (exception.type == DioExceptionType.connectionError) {
-        errorMessage = "Unable to connect to server! Please check your internet connection or Request Url";
+        errorMessage =
+            "Unable to connect to server! Please check your internet connection or Request Url";
       }
 
       ///Connection timeout
@@ -93,6 +89,11 @@ class SkadiError {
 
     ///FileSystem exception
     else if (exception is FileSystemException) {
+      errorMessage = exception.message;
+    }
+
+    ///Platform exception
+    else if (exception is PlatformException) {
       errorMessage = exception.message;
     }
 
