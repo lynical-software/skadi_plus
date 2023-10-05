@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 // bool _isSocialLink(String url) {
@@ -9,7 +8,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 //       url.contains("youtube");
 // }
 
-Future launchExternalUrl(String url, BuildContext? context) async {
+Future launchExternalUrl(String url) async {
   if (!url.contains("http") && !url.contains("https")) {
     url = "https://$url";
   }
@@ -19,19 +18,18 @@ Future launchExternalUrl(String url, BuildContext? context) async {
   );
 }
 
-Future launchFacebookApp(String? pageId, String fallbackUrl) async {
+Future launchFacebookApp(String? pageId, String fallbackUrl,
+    {String? type}) async {
   if (pageId == null) {
-    launchExternalUrl(fallbackUrl, null);
+    launchExternalUrl(fallbackUrl);
     return;
   }
   String fbProtocolUrl;
 
   ///on Android,
   if (Platform.isAndroid) {
-    if (pageId.length < 15) {
-      fbProtocolUrl = 'fb://page/$pageId';
-    } else if (pageId.length > 15) {
-      fbProtocolUrl = 'fb://group/$pageId';
+    if (type != null) {
+      fbProtocolUrl = 'fb://$type/$pageId';
     } else {
       fbProtocolUrl = 'fb://page/$pageId';
     }

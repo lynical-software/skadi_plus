@@ -1,3 +1,6 @@
+## [3.0.0] - 5 October 2023
+- Skadi 4.0.0 update
+
 ## [2.0.1] - 2 August 2023
 - Skadi 3.2.0 update
 
