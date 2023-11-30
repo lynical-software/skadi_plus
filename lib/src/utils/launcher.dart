@@ -2,12 +2,6 @@ import 'dart:io';
 
 import 'package:url_launcher/url_launcher_string.dart';
 
-// bool _isSocialLink(String url) {
-//   return url.contains("instagram") ||
-//       url.contains("twitter") ||
-//       url.contains("youtube");
-// }
-
 Future launchExternalUrl(String url) async {
   if (!url.contains("http") && !url.contains("https")) {
     url = "https://$url";
@@ -38,10 +32,13 @@ Future launchFacebookApp(String? pageId, String fallbackUrl,
   }
 
   try {
-    await launchUrlString(
+    bool result = await launchUrlString(
       fbProtocolUrl,
       mode: LaunchMode.externalApplication,
     );
+    if (!result) {
+      throw "Unable to launch Facebook app";
+    }
   } catch (e) {
     launchUrlString(
       fallbackUrl,

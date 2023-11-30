@@ -1,3 +1,7 @@
+## [3.1.0] - 30 November 2023
+- Skadi 4.2.0 update
+- Improve launcher
+
 ## [3.0.0] - 5 October 2023
 - Skadi 4.0.0 update
 
