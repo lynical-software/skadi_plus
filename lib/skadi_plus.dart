@@ -7,6 +7,7 @@ export 'src/model/pagination_handler.dart';
 export 'src/provider.dart';
 
 ///Utils
+export 'src/utils/error_handler.dart';
 export 'src/utils/error_message.dart';
 export 'src/utils/extension.dart';
 export 'src/utils/launcher.dart';

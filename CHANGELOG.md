@@ -1,3 +1,7 @@
+## [3.2.0] - 15 February 2024
+- Add SkadiErrorHandler
+- Update packages version
+
 ## [3.1.0] - 30 November 2023
 - Skadi 4.2.0 update
 - Improve launcher
