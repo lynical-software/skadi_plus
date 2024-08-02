@@ -1,3 +1,7 @@
+## [3.3.0] - 2 August 2024
+- Add SkadiErrorHandler
+- Update packages version
+
 ## [3.2.0] - 15 February 2024
 - Add SkadiErrorHandler
 - Update packages version
